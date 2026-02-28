@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "essays"
+    label: "Essays"
+    folder: "essays"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Topic", name: "topic", widget: "select", options: ["Communication Theory", "Media Ecologies", "Cultural Studies", "Media & Islam"] }
+      - { label: "Structure", name: "structure", widget: "select", options: ["Opinion Essay", "Notes"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Listen URL", name: "listen_url", widget: "string", required: false }
+      - { label: "PDF URL", name: "pdf_url", widget: "string", required: false }
+      - { label: "MP3 URL", name: "mp3_url", widget: "string", required: false }
